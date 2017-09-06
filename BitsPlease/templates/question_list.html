@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1>Problems</h1>
+<br>
+<form class="form-inline" meethod="get">
+	<div class="form-group" style="display: inline;">
+	    <select class="form-control" style="width:230px;" name='level' >
+		  <option disabled selected value> Difficulty </option>
+	      <option>easy</option>
+	      <option>medium</option>
+	      <option>hard</option>
+	    </select>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group">
+	    <select class="form-control" style="width:260px;" name="tag" id="exampleFormControlSelect1">
+	    <option disabled selected value> Tag </option>
+	      {% for tag in tags %}
+	      	<option>{{ tag }}</option>
+	      {% endfor %}
+	    </select>
+  	</div>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="submit" class="btn btn-success">Filter</button>
+</form>
+<br>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Difficulty</th>
+      <th>Contest</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for obj in object_list %}
+    <tr>
+    	<th>{{ obj.id }}</th>
+    	<th><a href="{% url 'problem_detail' pk=obj.id %}">{{ obj.name }}</a></th>
+    	<th>{{ obj.get_level_display }}</th>
+    	{% if obj.contest is None %}
+    		<th>None</th>
+    	{% else %}
+    		<th><a href="{% url 'contest_detail' pk=obj.contest.pk %}">{{ obj.contest }}</a></th>
+    	{% endif %}
+
+    </tr>
+    {% empty %}
+    <th>No results</th>
+   {% endfor %}
+  </tbody>
+</table>
+
+
+
+{% endblock content %}
+

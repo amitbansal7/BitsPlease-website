@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<br>
+	<div class="jumbotron">
+		<h2>{{ object.id }}.{{ object.name }}</h2>
+		<h5>{% if object.contest %}
+			Contest -
+			<a href="#">{{ object.contest }}</a>
+			|
+		{% endif %} Difficulty -  {{ object.get_level_display }}</h5>
+		<hr>
+		{{ object.description|linebreaks }}
+		<form action="{{ object.answer }}">
+    		<input type="submit" class="btn btn-primary" value="Solution" />
+		</form>
+	</div>
+{% endblock content %}

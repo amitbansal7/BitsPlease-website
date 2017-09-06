@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1>Contests</h1>
+<br>
+
+<form class="form-inline" method="get">
+	<div class="form-group">
+	    <select class="form-control" style="width:260px;" name="div">
+	    <option disabled selected value> Div </option>
+	    	<option>Div 1</option>
+	    	<option>Div 2</option>
+	    </select>
+  	</div>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="submit" class="btn btn-success">Filter</button>
+</form>
+<br>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Division</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for obj in object_list %}
+    <tr>
+    	<th>{{ obj.id }}</th>
+    	<th><a href="{% url 'contest_detail' pk=obj.id %}">{{ obj.name }}</a></th>
+    	<th>{{ obj.get_division_display }}</th>
+    </tr>
+    {% empty %}
+    <th>No results</th>
+   {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

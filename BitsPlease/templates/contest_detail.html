@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<br>
+	<div class="jumbotron">
+		<h2>{{ object.id }}.{{ object.name }}</h2>
+		<p> {{ object.division }} | {{ object.contest_date }}</p>
+		<hr>
+		<p>{{ object.description|linebreaks }}</p>
+		<h4>Problems</h4>
+		<table class="table table-bordered">
+		  <thead class="thead-inverse">
+		    <tr>
+		      <th>Id</th>
+		      <th>Title</th>
+		      <th>Difficulty</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  {% for obj in object.questions.all %}
+		    <tr>
+	    	<th>{{ obj.id }}</th>
+	    	<th><a href="{% url 'problem_detail' pk=obj.id %}">{{ obj.name }}</a></th>
+	    	<th>{{ obj.get_level_display }}</th>
+
+		    </tr>
+		    {% empty %}
+		    <th>No results</th>
+		   {% endfor %}
+		  </tbody>
+		</table>
+
+		<div class="container">
+			{% if object.winners|length > 0 %}
+				<h4>Winners</h4>
+				<p>{{ object.winners|linebreaks }}</p>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock content %}
