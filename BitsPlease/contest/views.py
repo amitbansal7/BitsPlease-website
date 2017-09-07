@@ -1,8 +1,16 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View, TemplateView
 from .models import Question, Contest, Tag
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+
+
+class AboutUs(TemplateView):
+    template_name = "aboutus.html"
+
+
+class ContactUs(TemplateView):
+    template_name = "Contactus.html"
 
 
 class ContestDetailView(DetailView):

@@ -20,13 +20,22 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'contests' %}">Contest <span class="sr-only">(current)</span></a>
             </li>
-            <br>
           </ul>
+
           <form class="form-inline my-md-0" method="get" action="{% url 'problems' %}">
             	<input class="form-control mr-sm-2" type="text"name='qry' placeholder="Search Keyword">
             	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          	</form>
+          </form>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'aboutus' %}">About us</a>
+            </li>
+            <li class="nav-item active">
+              <a  class="nav-link" href="{% url 'contactus' %}">Contact us</a>
+            </li>
+          </ul>
         </div>
+
       </div>
     </nav>
 
