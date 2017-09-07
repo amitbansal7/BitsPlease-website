@@ -11,6 +11,7 @@
 		{% endif %} Difficulty -  {{ object.get_level_display }}</h5>
 		<hr>
 		{{ object.description|linebreaks }}
+		<h5>Compile and test your code <a href="https://ideone.com/">here</a>.</h5>
 		<form action="{{ object.answer }}">
     		<input type="submit" class="btn btn-primary" value="Solution" />
 		</form>
