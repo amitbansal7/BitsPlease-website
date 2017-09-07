@@ -6,7 +6,7 @@
 		<h2>{{ object.id }}.{{ object.name }}</h2>
 		<h5>{% if object.contest %}
 			Contest -
-			<a href="#">{{ object.contest }}</a>
+			<a href="{% url 'contest_detail' pk=object.contest.id %}">{{ object.contest }}</a>
 			|
 		{% endif %} Difficulty -  {{ object.get_level_display }}</h5>
 		<hr>
