@@ -12,8 +12,10 @@
 		<hr>
 		{{ object.description|linebreaks }}
 		<h5>Compile and test your code <a target="_blank" href="https://ideone.com/">here</a>.</h5>
-		<form action="{{ object.answer }}" target="_blank">
-    		<input type="submit" class="btn btn-primary" value="Solution" />
-		</form>
+		{% if object.answer %}
+			<form action="{{ object.answer }}" target="_blank">
+    			<input type="submit" class="btn btn-primary" value="Solution" />
+			</form>
+		{% endif %}
 	</div>
 {% endblock content %}

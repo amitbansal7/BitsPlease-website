@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 LEVEL_CHOICES = (
+    ('beginner', "Beginner"),
     ('easy', "Easy"),
     ('medium', "Medium"),
     ('hard', "Hard")
