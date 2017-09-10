@@ -1,8 +1,19 @@
 from django.views.generic import ListView, DetailView, View, TemplateView
-from .models import Question, Contest, Tag
+from .models import Question, Contest, Tag, Notice
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+
+
+class NoticeListView(ListView):
+    model = Notice
+    template_name = "notice_list.html"
+
+    def get_queryset(self):
+        queryset = Notice.objects.all().order_by("-date")
+        queryset = queryset.filter(publish=True)
+
+        return queryset
 
 
 class AboutUs(TemplateView):

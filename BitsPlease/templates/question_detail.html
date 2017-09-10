@@ -10,7 +10,7 @@
 			|
 		{% endif %} Difficulty -  {{ object.get_level_display }}</h5>
 		<hr>
-		{{ object.description|linebreaks }}
+		{{ object.description|safe|linebreaks }}
 
 		{% if object.Url1 %}
 			<form action="{{ object.Url1 }}" style="display: inline;" target="_blank">
