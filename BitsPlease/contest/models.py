@@ -43,6 +43,11 @@ class Question(models.Model):
     description = models.TextField()
     level = models.CharField(max_length=50, choices=LEVEL_CHOICES)
     publish = models.BooleanField(default=False)
+    Url1 = models.URLField(max_length=500, null=True, blank=True, default=None)
+    Url2 = models.URLField(max_length=500, null=True, blank=True, default=None)
+    Url3 = models.URLField(max_length=500, null=True, blank=True, default=None)
+    Url4 = models.URLField(max_length=500, null=True, blank=True, default=None)
+    Url5 = models.URLField(max_length=500, null=True, blank=True, default=None)
     answer = models.URLField(max_length=500, blank=True, default=None)
     add_date = models.DateTimeField(auto_now_add=True)
 

@@ -11,6 +11,34 @@
 		{% endif %} Difficulty -  {{ object.get_level_display }}</h5>
 		<hr>
 		{{ object.description|linebreaks }}
+
+		{% if object.Url1 %}
+			<form action="{{ object.answer }}" style="display: inline;" target="_blank">
+    			<input type="submit" class="btn btn-success" value="One" />
+			</form>
+		{% endif %}
+		{% if object.Url2 %}
+			<form action="{{ object.answer }}" style="display: inline;" target="_blank">
+    			<input type="submit" class="btn btn-success" value="Two" />
+			</form>
+		{% endif %}
+		{% if object.Url3 %}
+			<form action="{{ object.answer }}" style="display: inline;" target="_blank">
+    			<input type="submit" class="btn btn-success" value="Three" />
+			</form>
+		{% endif %}
+		{% if object.Url4 %}
+			<form action="{{ object.answer }}" style="display: inline;" target="_blank style">
+    			<input type="submit" class="btn btn-success" value="Four" />
+			</form>
+		{% endif %}
+
+		{% if object.Url5 %}
+			<form action="{{ object.answer }}" style="display: inline;" target="_blank">
+    			<input type="submit" class="btn btn-success" value="Five" />
+			</form>
+		{% endif %}
+		<br><br>
 		<h5>Compile and test your code <a target="_blank" href="https://ideone.com/">here</a>.</h5>
 		{% if object.answer %}
 			<form action="{{ object.answer }}" target="_blank">
