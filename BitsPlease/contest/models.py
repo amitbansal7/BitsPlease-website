@@ -51,6 +51,7 @@ class Question(models.Model):
     tag = models.ForeignKey(Tag, blank=True, null=True, related_name='problems')
     name = models.CharField(max_length=200)
     description = models.TextField()
+    testcases = models.TextField(null=True, blank=True, default=None)
     level = models.CharField(max_length=50, choices=LEVEL_CHOICES)
     publish = models.BooleanField(default=False)
     Url1 = models.URLField(max_length=500, null=True, blank=True, default=None)

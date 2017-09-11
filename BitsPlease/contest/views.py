@@ -21,7 +21,7 @@ class AboutUs(TemplateView):
 
 
 class ContactUs(TemplateView):
-    template_name = "Contactus.html"
+    template_name = "contactus.html"
 
 
 class ContestDetailView(DetailView):
