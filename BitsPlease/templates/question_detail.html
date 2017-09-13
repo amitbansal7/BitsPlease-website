@@ -2,6 +2,12 @@
 
 {% block content %}
 	<br>
+
+	<script>
+	function myFun(){
+	    alert("Make sure you have tried this problem yourself!");
+	}
+	</script>
 	<div class="jumbotron">
 		<h2>{{ object.id }}.{{ object.name }}</h2>
 		<h5>{% if object.contest %}
@@ -41,9 +47,20 @@
 		<br><br>
 		<h5>Compile and test your code <a target="_blank" href="https://ideone.com/">here</a>.</h5>
 		{% if object.answer %}
+
 			<form action="{{ object.answer }}" target="_blank">
-    			<input type="submit" class="btn btn-primary" value="Solution" />
+    			<input onclick = "myFun()" type="submit" class="btn btn-primary" value="Solution" />
 			</form>
 		{% endif %}
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-format="fluid"
+             data-ad-layout="in-article"
+             data-ad-client="ca-pub-4068087601211066"
+             data-ad-slot="7028354423"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 	</div>
 {% endblock content %}

@@ -98,4 +98,6 @@ class QuestionListView(ListView):
         if level:
             queryset = queryset.filter(level__iexact=level)
 
+        queryset = queryset.order_by("-id")
+
         return queryset
