@@ -33,7 +33,7 @@
 		<div class="container">
 			{% if object.winners|length > 0 %}
 				<h4>Winners</h4>
-				<p>{{ object.winners|linebreaks }}</p>
+				<p>{{ object.winners|safe|linebreaks }}</p>
 			{% endif %}
 		</div>
 	</div>
