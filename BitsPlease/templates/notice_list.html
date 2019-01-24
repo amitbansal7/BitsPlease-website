@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div class="container">
+
+		{% for obj in object_list %}
+			<div class="jumbotron">
+				<h2>{{ obj.title }}</h2>
+				<p>{{ obj.content|safe|linebreaks }}</p>
+				<small>{{ obj.date }}</small>
+			</div>
+		{% empty %}
+			<h3>No notices yet</h3>
+		{% endfor %}
+
+
+</div>
+
+{% endblock content %}
